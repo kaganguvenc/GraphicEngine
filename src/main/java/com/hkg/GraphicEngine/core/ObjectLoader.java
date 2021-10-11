@@ -11,10 +11,6 @@ import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
 
-/**
- *
- * @author kagan.guvenc
- */
 public class ObjectLoader {
 
     private List<Integer> vaos = new ArrayList<>();
@@ -23,7 +19,7 @@ public class ObjectLoader {
     public Model loadModel(float[] vertices,int[] indices) {
         int id = createVao();
         storeIndicesBuffer(indices);
-        stoteDataInAttribList(0, 3, vertices);
+        storeDataInAttribList(0, 3, vertices);
         unbind();
         return new Model(id, vertices.length/3);
     }
@@ -44,7 +40,7 @@ public class ObjectLoader {
 
     }
 
-    private void stoteDataInAttribList(int attribNo, int vertexCount, float[] data) {
+    private void storeDataInAttribList(int attribNo, int vertexCount, float[] data) {
         int vbo = GL15.glGenBuffers();
         vbos.add(vbo);
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, vbo);
